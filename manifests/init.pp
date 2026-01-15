@@ -42,12 +42,7 @@ class nft (
     ensure => installed,
   }
 
-  if $facts['os']['family'] == 'RedHat' {
-    service { 'firewalld':
-      ensure => 'stopped',
-      enable => false,
-    }
-  }
+
 
   if $preamble =~ String {
     $_preamble = $preamble
